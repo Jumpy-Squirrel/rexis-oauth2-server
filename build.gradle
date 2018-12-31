@@ -30,13 +30,14 @@ repositories {
 ext['springCloudVersion'] = 'Greenwich.RC2'
 
 dependencies {
+    implementation('org.springframework.security:spring-security-jwt')
+    implementation('org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure')
 	implementation('org.springframework.boot:spring-boot-starter-actuator')
 	implementation('org.springframework.boot:spring-boot-starter-data-jpa')
 	implementation('org.springframework.boot:spring-boot-starter-mail')
 	implementation('org.springframework.boot:spring-boot-starter-security')
 	implementation('org.springframework.boot:spring-boot-starter-thymeleaf')
 	implementation('org.springframework.boot:spring-boot-starter-web')
-    implementation('org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure')
 	// runtimeOnly('mysql:mysql-connector-java')
 	runtimeOnly('com.h2database:h2')
 	compileOnly('org.projectlombok:lombok')
@@ -52,6 +53,8 @@ if(JavaVersion.current() >= JavaVersion.VERSION_11) {
         compile 'javax.xml.bind:jaxb-api:2.3.0'
         compile 'com.sun.xml.bind:jaxb-core:2.3.0'
         compile 'com.sun.xml.bind:jaxb-impl:2.3.0'
+
+        compile 'javax.activation:javax.activation-api:1.2.0'
     }
 }
 
