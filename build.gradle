@@ -36,6 +36,7 @@ dependencies {
 	implementation('org.springframework.boot:spring-boot-starter-security')
 	implementation('org.springframework.boot:spring-boot-starter-thymeleaf')
 	implementation('org.springframework.boot:spring-boot-starter-web')
+    implementation('org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure')
 	// runtimeOnly('mysql:mysql-connector-java')
 	runtimeOnly('com.h2database:h2')
 	compileOnly('org.projectlombok:lombok')
@@ -44,6 +45,14 @@ dependencies {
 	testImplementation('org.springframework.cloud:spring-cloud-starter-contract-verifier')
 	testImplementation('org.springframework.security:spring-security-test')
 	// testRuntimeOnly('com.h2database:h2')
+}
+
+if(JavaVersion.current() >= JavaVersion.VERSION_11) {
+    dependencies {
+        compile 'javax.xml.bind:jaxb-api:2.3.0'
+        compile 'com.sun.xml.bind:jaxb-core:2.3.0'
+        compile 'com.sun.xml.bind:jaxb-impl:2.3.0'
+    }
 }
 
 dependencyManagement {

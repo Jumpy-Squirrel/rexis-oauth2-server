@@ -1,0 +1,11 @@
+security:
+  oauth2:
+    client:
+      client-id: democlient
+      client-secret: demosecret
+
+spring:
+  security:
+    user:
+      name: demouser
+      password: demopassword
